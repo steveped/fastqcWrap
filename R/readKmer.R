@@ -71,6 +71,7 @@ readKmer <- function(fqName, qcDir, maxWidth = 25){
   df$Position <- minPos
   df$maxShift <- maxPos - minPos
   df$Proportion <- df$Count / totReads
+  df$Sample <- fqName
   df %<>% dplyr::arrange(Position, Count) %>% dplyr::filter(Position < maxWidth - k)
 
   list(summary = df,

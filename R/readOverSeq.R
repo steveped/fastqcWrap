@@ -15,6 +15,7 @@
 #' The component \code{$status} returns the PASS/FAIL/WARN status
 #'
 #' @import magrittr
+#' @import dplyr
 #' @import stringr
 #'
 #' @author Steve Pederson <stephen.pederson@@adelaide.edu.au>
@@ -56,7 +57,12 @@ readOverSeq <- function(fqName, qcDir){
       as.data.frame(stringsAsFactors = FALSE) %>%
       magrittr::set_names(nm)
 
+    df$Count %<>% as.integer()
+    df$Percentage %<>% as.double()
+
   }
+
+  df %<>% mutate(Sample = fqName)
 
   list(summary = df,
        status = str_to_upper(status))
