@@ -32,7 +32,10 @@
 #' @rdname readKmer
 #' @export
 readKmer <- function(fqName, qcDir, maxWidth = 25){
+
   fullName <- list.files(qcDir, fqName, full.names = TRUE)
+  stopifnot(file.exists(fullName))
+
   # get the zip file info
   zipFile <- grep(".zip$", fullName, value = TRUE)
   if (length(zipFile) > 1)
