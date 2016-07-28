@@ -24,7 +24,7 @@
 kmer2StringSet <- function(seq, pos, ..., pad = "N"){
 
   k <- unique(nchar(seq))
-  if (length(x)!= 1) stop("There appear to be k-mers of varying lengths. Lengths must be equal for sequences.\n")
+  if (length(k)!= 1) stop("There appear to be k-mers of varying lengths. Lengths must be equal for sequences.\n")
   stopifnot(length(pos) == length(seq))
 
   stringSet <- str_pad(seq, width = pos - 1 + k, side = "left", pad = pad) %>%
