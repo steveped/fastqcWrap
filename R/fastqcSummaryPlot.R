@@ -38,8 +38,6 @@ fastqcSummaryPlot <- function(fqNames, qcDir, xLabLen = 20){
                              value.name = "Status") %>%
     dplyr::mutate(File = substr(File, 1, xLabLen))
 
-  if (missing(main)) main <- paste("FASTQC Summary\n", qcDir, sep="")
-
   ggplot(ggCounts, aes(x=File, y=category, fill=Status)) +
     geom_tile(colour="black") +
     scale_fill_manual(values=c(FAIL="red", PASS="green", WARN="yellow")) +
