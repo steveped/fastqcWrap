@@ -4,21 +4,14 @@
 \alias{fastqcSummaryPlot}
 \title{Plot the basic PASS/FAIL information from a batch of FASTQC summaries}
 \usage{
-fastqcSummaryPlot(fqNames, qcDir, main, xLabLen = 20, showGuide = FALSE,
-  ...)
+fastqcSummaryPlot(fqNames, qcDir, xLabLen = 20)
 }
 \arguments{
 \item{fqNames}{the filenames to extract the totals for.}
 
 \item{qcDir}{the directory to look in for the FASTQC reports}
 
-\item{main}{the title of the plot. Will be automatically generated if missing. Use \code{main = c()} to remove the plot title}
-
 \item{xLabLen}{the number of characters used for the labels on the x axis. Can be used to shorten long filenames.}
-
-\item{showGuide}{show the guide to PASS, FAIL, WARN. Defaults to FALSE}
-
-\item{...}{passed to \code{element_text()} for \code{axis.text.x} only}
 }
 \description{
 Make a basic plot of all PASS/FAIL information rom a batch of FASTQC summaries
@@ -27,8 +20,7 @@ Make a basic plot of all PASS/FAIL information rom a batch of FASTQC summaries
 This calls \code{\link{fastqcSummary}} and makes a simple plot for all samples
 
 \code{fastqcSummaryPlot} will plot the output from the function \code{fastqcSummary} using default parameters.
-This function relies on ggplot2 using pre-defined parameters.
-Only the parameters for the x-axis labels (i.e. the file names) can be tweaked via the ellipsis.
+This function returns a ggplot2 object which can then be operated on using the standard ggplot2 syntax
 }
 \author{
 Steve Pederson <stephen.pederson@adelaide.edu.au>
