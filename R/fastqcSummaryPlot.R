@@ -44,7 +44,7 @@ fastqcSummaryPlot <- function(fqNames, qcDir, main, xLabLen = 20, showGuide = FA
 
   if (missing(main)) main <- paste("FASTQC Summary\n", qcDir, sep="")
 
-  ggplot(ggCounts, aes(x=variable, y=category, fill=Status)) +
+  ggplot(ggCounts, aes(x=File, y=category, fill=Status)) +
     geom_tile(colour="black") +
     scale_fill_manual(values=c(FAIL="red", PASS="green", WARN="yellow")) +
     theme(axis.text.x = element_text(...)) +
