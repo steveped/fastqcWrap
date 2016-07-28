@@ -1,0 +1,27 @@
+Package: fastqcWrap
+Type: Package
+Title: Provides wrappers to FastQC from within R
+Version: 0.1.1
+Date: 2016-07-28
+Author: Steve Pederson
+Maintainer: <stephen.pederson@adelaide.edu.au>
+Description: Provides wrappers to FastQC from within R and enables easy import
+    of some key values from the reports
+Depends:
+    ggplot2,
+    dplyr,
+    magrittr,
+    stringr,
+    reshape2,
+    parallel,
+    Biostrings
+Imports:
+    ggplot2,
+    dplyr,
+    magrittr,
+    stringr,
+    reshape2,
+    parallel,
+    Biostrings
+License: GPL-3
+RoxygenNote: 5.0.1
