@@ -1,4 +1,4 @@
-#' Extract the PASS/FAIL information from a batch of FASTQC summaries
+#' @title Extract the PASS/FAIL information from a batch of FASTQC summaries
 #'
 #' @description Look through a batch of .zip files produced by FASTQC to obtain summary information across a range of files
 #'
