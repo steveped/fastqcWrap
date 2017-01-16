@@ -60,7 +60,7 @@ plotReadQualities <- function(qcDir, fqNames, suffix = "_fastqc.html",  merge = 
       datFile <- file.path(intDir, "fastqc_data.txt")
       allData <- readLines(uz <- unz(file.path(qcDir,x$zipName), datFile), -1)
       close(uz)
-      startLine <- match(">>Per base sequence quality\tpass", allData) + 1
+      startLine <- grep("Per base sequence quality", allData) + 1
       endLine <- grep("END_MODULE", allData)
       endLine <- min(endLine[endLine > startLine])
       allData <- allData[(startLine + 1):(endLine - 1)]
